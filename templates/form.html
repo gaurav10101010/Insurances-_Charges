@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Experience Survey</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 700px;
+            margin: 40px auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #007BFF;
+            margin-bottom: 20px;
+        }
+        form {
+            display: grid;
+            gap: 15px;
+        }
+        label {
+            font-weight: bold;
+            color: #555;
+        }
+        input[type="number"], input[type="text"], select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        select {
+            cursor: pointer;
+        }
+        button {
+            padding: 15px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .input-group {
+            display: flex;
+            flex-direction: column;
+        }
+        .input-group span {
+            font-size: 0.9em;
+            color: #888;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Insurance Charges Predictor</h1>
+        <form action="/submit_form" method="post">
+            <div class="input-group">
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" required>
+                <span>Enter your age.</span>
+            </div>
+
+            <div class="input-group">
+                <label for="bmi">bmi:</label>
+                <input type="number" id="bmi" name="bmi" required>
+                <span>Enter your bmi.</span>
+            </div>
+
+            <div class="input-group">
+                <label for="child">number of children:</label>
+                <input type="number" id="child" name="child" min="1" max="5" required>
+                <span>enter number of children 1 to 5 .</span>
+            </div>
+
+            <div class="form-group">
+                <label for="smoker">Smoker:</label>
+                <select class="form-control" id="smoker" name="smoker" required>
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </select>
+
+            
+
+                <div class="form-group">
+                    <label for="region">Region:</label>
+                    <select class="form-control" id="region" name="region" required>
+                        <option value="nw">Northwest</option>
+                        <option value="se">Southeast</option>
+                        <option value="sw">Southwest</option>
+                    </select>
+                </div>
+
+            <div class="input-group">
+                <label for="gender">Gender:</label>
+                <select id="gender" name="gender" required>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
